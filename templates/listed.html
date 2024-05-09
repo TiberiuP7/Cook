@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Shopping list
+{% endblock %}
+
+{% block main %}
+
+    <h3>{{ name|capitalize }}'s Shopping list</h3>for {{ today }}
+
+    <br>
+    <div id="listed" >
+        <ul><br>
+            <lh><h5 >Vegetables</h5></lh>
+            {% for x in veg %}
+                <li>{{ x }}</li>
+            {% endfor %}
+
+            <br>
+
+            <lh><h5>Meat</h5></lh>
+            {% for x in meat %}
+                <li>{{ x }}</li>
+            {% endfor %}
+                <br>
+
+
+            <lh><h5>Dairy</h5></lh>
+            {% for x in dairy %}
+                <li>{{ x }}</li>
+            {% endfor %}
+                <br>
+
+            <lh><h5>Spices&Sauces</h5></lh>
+            {% for x in spices %}
+                <li>{{ x }}</li>
+            {% endfor %}
+                <br>
+
+            <lh><h5>Sweets</h5></lh>
+            {% for x in sweets %}
+                <li>{{ x }}</li>
+            {% endfor %}
+                <br>
+
+
+        {% if drinks %}
+            <lh><h5>Liquors&Beverages</h5></lh>
+            {% for x in drinks %}
+                <li>{{ x }}</li>
+            {% endfor %}
+        {% else %}
+            &nbsp;
+        {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}

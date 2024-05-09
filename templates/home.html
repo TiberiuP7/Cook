@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved recipes
+{% endblock %}
+
+
+{% block main %}
+        <div>
+
+        {% for recipe in recipes %}
+            <h3>{{ recipe["title"] }}</h3><br>
+            <div id="steps1">
+                <h5>Ingredients</h5>
+                <ul>
+                        <li align="left"> {{ recipe["ingredients"] }} </li>
+                    <br><br>
+                </ul>
+                Estimated prep time: <b>{{ recipe["time"] }} minutes</b><br>
+                {{ recipe["difficulty"] }}<br>
+            </div>
+            <div id="steps2" >
+                <br><br>
+                <ol>
+                    <li align="left"> <b>Step 1.</b>{{ recipe["steps"] }}</li><br>
+                    <li align="left"> <b>Step 2.</b>{{ recipe["step2"] }}</li><br>
+                    <li align="left"> <b>Step 3.</b>{{ recipe["step3"] }}</li><br>
+                    <li align="left"><b>Step 4.</b> {{ recipe["step4"] }}</li><br>
+                </ol>
+            </div>
+
+        <h5>Enjoy!</h5><br><br>
+        </div>
+
+        {% endfor %}
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recipes
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for item in items %}
+                    <a class="dropdown-item" href="/"> {{ item["title"] }} </a>
+                {% endfor %}
+                <a class="dropdown-item" href="/">Link</a>
+            </div>
+        </div>
+
+
+
+
+            <br><br>
+            <div><a class="dropdown-item" href="https://www.lidl.com/recipes?category=all">Recipe ideas</a></div>
+{% endblock %}

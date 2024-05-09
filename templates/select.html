@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Please select a recipe:
+{% endblock %}
+
+{% block main %}
+
+    <form action="/" method="post">
+        <label for="title">Saved recipes</label><br>
+        <select name="title" >
+            {% for recipe in recipes %}
+            <option value="{{ recipe.title }}"> {{ recipe["title"] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Go to recipe</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a recipe
+{% endblock %}
+
+{% block main %}
+
+    <div><h3>You can save your favourite recipes here</h3></div>
+    <form action="/create" method="post">
+        <div>
+        <input type="text" required autofocus placeholder="Title" name="title">
+        </div>
+        <br>
+        <div><textarea rows="5" col="20" placeholder="Ingredients" name="ingredients" style="width:25%"></textarea></div>
+        <br>
+        <textarea placeholder="Step 1" name="step1" style="width:50%;height:80px;" ></textarea>
+        <textarea placeholder="Step 2" name="step2" rows="10" col="20" style="width:50%;height:85px;"></textarea>
+        <textarea placeholder="Step 3" name="step3" rows="10" col="20" style="width:50%;height:85px;"></textarea>
+        <textarea placeholder="Step 4" name="step3" rows="10" col="10"style="width:50%;height:85px;"></textarea>
+        <div>
+        <input type="number" placeholder="Prep time in minutes" name="time">
+        </div>
+        <button type="submit" class="btn-primary">Save recipe</button>
+    </form>
+{% endblock %}

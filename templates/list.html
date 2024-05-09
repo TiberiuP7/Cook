@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Shopping list
+{% endblock %}
+
+{% block main %}
+
+    <h3>Add the items to today's shopping list</h3>
+    <br>
+    <h5>Please separate each item by a comma(,)</h5>
+    <form action="/list" method="post">
+        <div>
+            <textarea name="vegetables" id="list" placeholder="Vegetables&Fruits"></textarea>
+            <textarea name="meat" id="list" placeholder="Meat"></textarea>
+            <textarea name="dairy" id="list" placeholder="Dairy products"></textarea>
+            <textarea name="sweets" id="list" placeholder="Sweets"></textarea>
+            <textarea name="drinks" id="list" placeholder="Liquors&Beverages"></textarea>
+            <textarea name="spices" id="list" placeholder="Spices&Sauces"></textarea>
+            <br><br>
+            <input type="date" name="today">
+        </div>
+        <button class="btn-primary" type="submit">Save list</button>
+    </form>
+{% endblock %}
