@@ -1,1 +1,103 @@
+{% extends "layout.html" %}
 
+{% block head %}
+
+    <title>Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+{% block main %}
+    {% set page = page  -%}
+    {# Check whick converter was used #}
+    {# If cups to grams #}
+    {% if page == 1 %}
+        <div>
+            <h3 style="color:#4FFFB0;"> {{ cups }} Cups {{ ingredient|upper }} into Grams</h3>
+            <b>{{ ingredient|upper }}</b>
+            <br>Equals<br>
+            <br>
+            <div style="border:1px solid white;background-color: #50C878;height:50px;text-align:center;font-size: 25px;margin:0 auto;width:50%">
+
+            <b> {{ grams }} Grams</b>
+            </div>
+        </div>
+    {# If grams to cups #}
+    {% elif page == 2 %}
+        <div>
+            <h3 style="color:#4FFFB0;"> {{ grams }} Grams {{ ingredient|upper }} into Cups</h3>
+            <b>{{ ingredient|upper }}</b>
+            <br>Equals<br>
+            <br>
+            <div style="border:1px solid white;background-color: #50C878;height:50px;text-align:center;font-size: 25px;">
+
+            <b> {{ cups }} Cups</b>
+            </div>
+        </div>
+    {# If ounces to grams #}
+    {% else %}
+        <div>
+            <h3 style="color:#4FFFB0;"> {{ ounces }} Ounces {{ ingredient|upper }} into Grams</h3>
+            <b>{{ ingredient|upper }}</b>
+            <br>Equals<br>
+            <br>
+            <div style="border:1px solid white;background-color: #50C878;height:50px;text-align:center;font-size: 25px;">
+
+            <b> {{ grams }} Grams</b>
+            </div>
+        </div>
+    {% endif %}
+
+    <br><br>
+    <div id="other">
+        <h4 style="text-align:left">Other conversions</h4>
+        <table style="width:40%">
+            <tr style="height:30px">
+                <th>Teaspoons</th>
+                <th>Mililiters</th>
+            </tr>
+            <tr>
+                <td>
+                    1/2 teaspoon
+                </td>
+                <td>2.5 ml</td>
+            </tr>
+            <tr><td>1 teaspoon</td>
+                <td>5 ml</td>
+            </tr>
+
+            <tr style="height:30px">
+                <th>Tablespoons</th>
+                <th>Mililiters</th>
+            </tr>
+            <tr>
+                <td>1/2 tablespoon</td>
+                <td>7.5 ml</td>
+            </tr>
+            <tr>
+                <td>
+                    1 tablespoon
+                </td>
+                <td>15 ml</td>
+            </tr>
+        </table>
+        <br><br>
+        <h4 style="text-align:left">Common Oven Temperatures Conversions</h4>
+        <table style="width:40%">
+            <tr style="height:30px">
+            <th>FAHRENHEIT(F)</th>
+            <th>CELSIUS(C)</th>
+            </tr>
+            <tr><td>250</td><td>120</td></tr>
+            <tr><td>300</td><td>150</td></tr>
+            <tr><td>350</td><td>180</td></tr>
+            <tr><td>375</td><td>190</td></tr>
+            <tr><td>450</td><td>230</td></tr>
+            <tr style="height:30px"><td>°C x 1.8 + 32 = °F</td><td>°F - 32 + 1.8 = °C</td></tr>
+        </table>
+    </div>
+{% endblock %}
